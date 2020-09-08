@@ -1,13 +1,13 @@
 import requests, json, sys, os
 import time
 
-PATH = os.getcwd() + "/"
+PATH = os.getcwd()
 version = float(str(sys.version_info[0]) + "." + str(sys.version_info[1]))
 
 if(version < 3.5):
     raise Exception("This script requires Python 3.5+")
 
-with open(PATH + "config.json") as config_file:
+with open(os.path.join(PATH, "app", "config.json")) as config_file:
     config = json.loads(config_file.read())
 
 def getIPs():
